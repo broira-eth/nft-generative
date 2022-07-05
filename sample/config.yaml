@@ -1,0 +1,77 @@
+parts:
+ - name: background
+ - name: effect
+ - name: backhair
+ - name: body
+ - name: face
+ - name: eye
+ - name: mouth
+ - name: eyebrows
+ - name: hair
+ - name: Accessory
+image:
+  background:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/background
+
+  effect:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/effect
+
+  backhair:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/backhair
+
+  body:
+    condition: true
+    skip: false
+    related_parts: face
+    path:
+      base_white: Output/Image/LAG_Parts/body/normal
+      baes_sun: Output/Image/LAG_Parts/body/suntan
+
+  face:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/face
+
+  eye:
+    condition: true
+    skip: false
+    related_parts: face
+    path:
+      base_white: Output/Image/LAG_Parts/eye/normal
+      baes_sun: Output/Image/LAG_Parts/eye/suntan
+
+  mouth:
+    condition: true
+    skip: false
+    related_parts: face
+    path:
+      base_white: Output/Image/LAG_Parts/mouth/normal
+      baes_sun: Output/Image/LAG_Parts/mouth/suntan
+
+  eyebrows:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/eyebrow
+
+  hair:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/fronthair
+
+  Accessory:
+    condition: false
+    skip: false
+    path: Output/Image/LAG_Parts/accessory
+
+traits:
+  path: Output/Metadata/traits.csv
+
+size:
+ height: 3000
+ width: 3000
