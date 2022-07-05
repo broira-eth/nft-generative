@@ -34,6 +34,9 @@
 # cd ./source
 ```
 
+### Flow
+![](./image/generative-flow.png)
+
 ### generative_image
 * Requires a Traits file that defines the Config, part images and part combinations.
 * Trait files are intended to be generated in Pict and other formats and need to be tab-delimited
