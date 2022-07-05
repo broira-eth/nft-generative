@@ -31,13 +31,9 @@ def main(argv):
     with open(obj["traits"]["path"]) as f:
         for line in csv.DictReader(f , delimiter = "\t"):
             count +=1
-            # print(line)
-
         
             # 各パーツの重ね合わせ
             for i in obj['parts']:
-                # print(obj['image'][i['name']])
-
                 parts_name = i['name']
 
                 try:
@@ -56,11 +52,9 @@ def main(argv):
                     
                     related_parts = obj['image'][parts_name]['related_parts']
                     path = obj['image'][parts_name]['path'][line[related_parts]]
-                    # print(path)
 
                 else:
                     path = obj['image'][parts_name]['path']
-                    #  print(path)
 
                 file_path = path+'/'+line[parts_name]+'.png'
 
@@ -69,9 +63,6 @@ def main(argv):
                 except Exception as e:                    
                     print(e, file=sys.stderr)
                     pass
-                # print(file_path)
-
-                
 
       
 if __name__ == '__main__':

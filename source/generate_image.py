@@ -39,8 +39,6 @@ def main(argv):
             
             # 各パーツの重ね合わせ
             for i in obj['parts']:
-                # print(obj['image'][i['name']])
-
                 parts_name = i['name']
 
                 if line[parts_name] == "None":
@@ -55,14 +53,11 @@ def main(argv):
                     
                     related_parts = obj['image'][parts_name]['related_parts']
                     path = obj['image'][parts_name]['path'][line[related_parts]]
-                    # print(path)
 
                 else:
                      path = obj['image'][parts_name]['path']
-                    #  print(path)
 
                 file_path = path+'/'+line[parts_name]+'.png'
-                # print(file_path)
 
                 # 画像読み込み＆合成
                 img = Image.open(file_path).convert('RGBA')
