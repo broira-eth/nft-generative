@@ -43,7 +43,7 @@
 
 Example
 ```
-# python3 generate_image.py --config=Config/config.yaml --save ./Output/Image
+# python3 generate_image.py --config Config/config.yaml --save ./Output/Image
  ```
 
 ### traits2json
@@ -52,7 +52,7 @@ Example
 
 Example
 ```
-python3 traits2json.py --path ./Input/Traits/traits.csv --save ./Output/Traits/traits_json.csv --ignore=backhair
+python3 traits2json.py --path ./Input/Traits/traits.csv --save ./Output/Traits/traits_json.csv --ignore backhair body
 ```
 ### csv2metadata
 * Output each line of the metadata CSV file as a separate Json file

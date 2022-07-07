@@ -8,13 +8,14 @@ import argparse
 parser = argparse.ArgumentParser(description='')
 parser.add_argument('--path', required=True, help='Path of the Traits file to be read.') 
 parser.add_argument('--save', default="./Output/Traits/result.csv",help= 'Path of the file to be saved') 
-parser.add_argument('--ignore', default=[], required=False,type=str, help='Traits not to be left in metadata; multiple can be specified, separated by commas.') 
+parser.add_argument('--ignore', default=[], nargs='+', required=False,type=str, help='Traits not to be left in metadata; multiple can be specified, separated by commas.') 
 
 if __name__ == "__main__":
 
     count = 0
     csv_path = parser.parse_args().path
     ignore = parser.parse_args().ignore
+    ignore_tuple = tuple(ignore)
     save_path = parser.parse_args().save
 
     with open(csv_path) as f:
@@ -28,7 +29,7 @@ if __name__ == "__main__":
 
                 attributes= list()
                 for i,(key,value) in enumerate(zip(keys,values)):
-                    if key in ignore:
+                    if key in ignore_tuple:
                         continue
                     attributes.append({"trait_type":key,"value":value})
                     # print(json.dumps(attributes))
